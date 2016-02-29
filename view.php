@@ -48,9 +48,13 @@
     <right class="right">
         <h2>Liste des séjours prévus </h2>
         <fieldset>
-            <?php
-            require 'model.php';
-            ?>
+            foreach ($sejours as $sejour): ?>
+            <sejour>
+                <h2><p><?php echo $sejour['SEJINTITULE'] ?></p></h2>
+                <?php echo $sejour['SEJMONTANTMBI'].'€' ?><BR/>
+                <?php echo 'A partir du '.$sejour['SEJDTEDEB'] ?>
+                <?php echo $sejour['SEJDUREE'].' nuits' ?>
+            </sejour>
         </fieldset>
     </right>
 </main>
