@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="css/styly.css" rel="stylesheet" />
+    <link href="../web/css/styly.css" rel="stylesheet" />
     <title>SAINT PAUL DU TERRAY</title>
 </head>
 
@@ -48,13 +48,14 @@
     <right class="right">
         <h2>Liste des séjours prévus </h2>
         <fieldset>
-            foreach ($sejours as $sejour): ?>
+            <?php foreach($sejours as $sejour): ?>
             <sejour>
                 <h2><p><?php echo $sejour['SEJINTITULE'] ?></p></h2>
                 <?php echo $sejour['SEJMONTANTMBI'].'€' ?><BR/>
                 <?php echo 'A partir du '.$sejour['SEJDTEDEB'] ?>
                 <?php echo $sejour['SEJDUREE'].' nuits' ?>
             </sejour>
+            <?php endforeach; ?>
         </fieldset>
     </right>
 </main>
