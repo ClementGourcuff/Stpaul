@@ -48,14 +48,14 @@
     <right class="right">
         <h2>Liste des séjours prévus </h2>
         <fieldset>
-            <?php foreach($sejours as $sejour): ?>
+            {% for sejour in sejours %}
             <sejour>
-                <h2><p><?php echo $sejour->getSejintule ?></p></h2>
-                <?php echo $sejour->getSejmontant ?><BR/>
-                <?php echo $sejour->getSejDebut ?>
-                <?php echo $sejour->getSejduree ?>
+                <h2><p>{{ sejour.sejintitule }}</p></h2>
+                {{ sejour.sejmontant }}€<BR/>
+                A partir du {{ sejour.sejdebut }}
+                {{ sejour.sejduree }} nuits
             </sejour>
-            <?php endforeach; ?>
+            {% endfor %}
         </fieldset>
     </right>
 </main>

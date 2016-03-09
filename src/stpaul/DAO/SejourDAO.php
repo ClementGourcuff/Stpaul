@@ -35,7 +35,7 @@ class SejourDAO
 
         $sejours = array();
         foreach ($result as $row) {
-            $sejourNo = $row['sejno'];
+            $sejourNo = $row['SEJNO'];
             $sejours[$sejourNo] = $this->buildSejour($row);
         }
         return $sejours;
@@ -47,7 +47,7 @@ class SejourDAO
      */
     private function buildSejour(array $row) {
 
-        $sejour = new Sejour($row['sejno'],$row['sejintitule'],$row['sejmontantmbi'],$row['sejdtedeb'],$row['sejduree']);
+        $sejour = new Sejour($row['SEJNO'],$row['SEJINTITULE'],$row['SEJMONTANTMBI'],$row['SEJDTEDEB'],$row['SEJDUREE']);
         return $sejour;
     }
 }
