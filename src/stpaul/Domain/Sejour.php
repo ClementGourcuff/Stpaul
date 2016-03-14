@@ -36,7 +36,7 @@ class Sejour
         $this->sejno = $sejno;
         $this->sejintitule = $sejintitule;
         $this->sejmontant = $sejmontant;
-        $this->sejdebut = new \DateTime($sejdebut);
+        $this->sejdebut = $sejdebut;
         $this->sejduree = $sejduree;
     }
 
@@ -131,7 +131,7 @@ class Sejour
      */
     public function getSejDteFin()
     {
-        $date = $this->sejdebut;
+        $date = new \DateTime($this->sejdebut);
         $date->add(new \DateInterval('P'.$this->sejduree.'D'));
         return $date->format('Y-m-d');
     }
