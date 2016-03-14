@@ -36,7 +36,7 @@ class Sejour
         $this->sejno = $sejno;
         $this->sejintitule = $sejintitule;
         $this->sejmontant = $sejmontant;
-        $this->sejdebut = $sejdebut;
+        $this->sejdebut = new \DateTime($sejdebut);
         $this->sejduree = $sejduree;
     }
 
@@ -119,5 +119,34 @@ class Sejour
     {
         $this->sejduree = $sejduree;
     }
+
+    /**
+     * Retourne la date de fin de séjour
+     * @return mixed
+     */
+
+    /**
+     * Retourne la date de fin de séjour
+     * @return mixed
+     */
+    public function getSejDteFin()
+    {
+        $date = $this->sejdebut;
+        $date->add(new \DateInterval('P'.$this->sejduree.'D'));
+        return $date->format('Y-m-d');
+    }
+
+    /**
+     * Formatage jj-mm-aaaa
+     * @param $pDte : date à formater
+     * @return mixed
+     */
+    public function getSejDteFormatFR($pDte)
+    {
+        $date = new \DateTime($pDte);
+        $dateFr = $date->format('d-m-Y');
+        return $dateFr;
+    }
+
 
 }
